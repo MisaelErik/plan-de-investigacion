@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Proyecto de Tesis - UNAC</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Guía educativa interactiva y metodológica del proyecto de tesis sobre adopción de sistemas digitales y desempeño comercial de microempresas en Bellavista, Callao, 2026.">
+    <meta name="author" content="Grupo 5 - UNAC">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Archivo de Estilos Externo -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- KaTeX para renderizar fórmulas matemáticas hermosas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
+</head>
+<body>
+
+    <!-- NAV SUPERIOR -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="#" class="logo">Tesis<span>Interactive</span></a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#mapa" class="active">Mapa</a></li>
+                    <li><a href="#variables">Variables</a></li>
+                    <li><a href="#problema">Problema</a></li>
+                    <li><a href="#objetivos">Objetivos</a></li>
+                    <li><a href="#hipotesis">Hipótesis</a></li>
+                    <li><a href="#metodologia">Metodología</a></li>
+                    <li><a href="#cuestionario">Cuestionario</a></li>
+                    <li><a href="#antecedentes">Antecedentes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-univ">Universidad Nacional del Callao</div>
+        <div class="hero-facultad">Facultad de Ciencias Administrativas • Escuela Profesional de Administración</div>
+        <h1>Adopción de sistemas digitales y su relación con el desempeño comercial de las microempresas de Bellavista</h1>
+        <p class="hero-subtitle">
+            Una guía interactiva diseñada didácticamente para comprender paso a paso el planteamiento, la operacionalización de variables y el diseño metodológico de nuestro proyecto de investigación real (Ciclo VII - 2026).
+        </p>
+        <div class="hero-meta">
+            <div>
+                <strong>Asignatura</strong>
+                Metodología de la Inv. Científica
+            </div>
+            <div>
+                <strong>Docente Asesor</strong>
+                Dr. Raul Suarez Bazalar
+            </div>
+            <div>
+                <strong>Ubicación y Año</strong>
+                Bellavista, Callao • 2026
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+
+        <!-- INTRODUCCIÓN CON IMÁGENES EDUCATIVAS -->
+        <section class="section-block fade-in-section">
+            <h2 class="section-title">El Núcleo del Proyecto</h2>
+            <p>
+                Este proyecto investiga la relación entre la <strong>Adopción de Sistemas Digitales (Variable Independiente - V1)</strong> y el <strong>Desempeño Comercial (Variable Dependiente - V2)</strong>. A través de este estudio descriptivo-correlacional, evaluamos cómo la digitalización en microempresas del sector comercio (minoristas de abastos, minimarkets, bodegas) del distrito de Bellavista genera eficiencia operativa e ingresos.
+            </p>
+            
+            <div class="educational-figures">
+                <div class="figure-card">
+                    <img src="digital_adoption.png" alt="Ilustración de adopción de sistemas digitales en Bellavista">
+                    <div class="figure-caption">Figura 1: Adopción de Sistemas Digitales (V1) - Cobros QR, billeteras electrónicas y localización en mapas.</div>
+                </div>
+                <div class="figure-card">
+                    <img src="sales_performance.png" alt="Ilustración de desempeño comercial de microempresas">
+                    <div class="figure-caption">Figura 2: Desempeño Comercial (V2) - Flujo de ingresos optimizado, agilidad transaccional y fidelización.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAPA VISUAL INTERACTIVO -->
+        <section id="mapa" class="section-block fade-in-section">
+            <h2 class="section-title">Mapa Estructural de la Investigación</h2>
+            <div class="section-intro-box">
+                <h4>¿Cómo funciona la interactividad del mapa?</h4>
+                <p>Al pasar el mouse (hover) sobre **cualquier caja o nodo** (problemas, objetivos, hipótesis, variables o dimensiones), se encenderá **únicamente el camino de elementos que lo componen**. Por ejemplo, si pasas sobre el <strong>Problema General (PG)</strong> se encenderán solo las dos Variables. Si pasas sobre un <strong>Problema Específico (PE)</strong>, se encenderá la dimensión que lo compone, su variable y el objetivo/hipótesis correspondientes. Haz click en cualquier nodo para ver su definición.</p>
+            </div>
+
+            <div class="map-wrapper">
+                <!-- SVG Canvas para conexiones dinámicas -->
+                <svg class="map-connections-canvas" id="canvas-overlay"></svg>
+                
+                <div class="pyramid-container">
+                    
+                    <!-- NIVEL 1: TEMA (Cúspide de la Pirámide) -->
+                    <div class="pyramid-row pyramid-level-1">
+                        <div class="tree-node node-tema" id="node-tema" onmouseover="hoverNode('node-tema')" onmouseout="hoverNode('')" onclick="showModal('tema')">
+                            <strong>Tema de Investigación</strong>
+                            <span>Adopción de Sistemas Digitales y Desempeño Comercial de las Microempresas en Bellavista, 2026</span>
+                        </div>
+                    </div>
+
+                    <!-- Etiqueta de derivación -->
+                    <div class="derivation-label">
+                        <span>Del tema se extraen las <strong>2 variables</strong> y se formula el <strong>problema general</strong></span>
+                    </div>
+
+                    <!-- NIVEL 2: VARIABLES + PROBLEMA GENERAL -->
+                    <div class="pyramid-row pyramid-level-2">
+                        <div class="tree-node node-v1" id="node-v1" onmouseover="hoverNode('node-v1')" onmouseout="hoverNode('')" onclick="showModal('variables')">
+                            <strong>Variable Independiente (V1)</strong>
+                            <span>Adopción de Sistemas Digitales</span>
+                        </div>
+                        <div class="tree-node node-pg" id="node-pg" onmouseover="hoverNode('node-pg')" onmouseout="hoverNode('')" onclick="showModal('problema_gen')">
+                            <strong>Problema General (PG)</strong>
+                            <span>¿Qué relación existe entre V1 y V2?</span>
+                        </div>
+                        <div class="tree-node node-v2" id="node-v2" onmouseover="hoverNode('node-v2')" onmouseout="hoverNode('')" onclick="showModal('variables')">
+                            <strong>Variable Dependiente (V2)</strong>
+                            <span>Desempeño Comercial</span>
+                        </div>
+                    </div>
+
+                    <!-- Etiqueta de derivación -->
+                    <div class="derivation-label">
+                        <span>Del PG se derivan el <strong>objetivo</strong> y la <strong>hipótesis general</strong>. De cada variable se extraen sus <strong>dimensiones</strong></span>
+                    </div>
+
+                    <!-- NIVEL 3: DIMENSIONES V1 + OG/HG + DIMENSIONES V2 -->
+                    <div class="pyramid-row pyramid-level-3">
+                        <div class="pyramid-col-stack">
+                            <div class="tree-node node-dim-v1" id="node-v1-d1" onmouseover="hoverNode('node-v1-d1')" onmouseout="hoverNode('')" onclick="showModal('v1-d1')">
+                                <strong>V1 - Dimensión 1</strong>
+                                <span>Medios de Pago Electrónicos</span>
+                            </div>
+                            <div class="tree-node node-dim-v1" id="node-v1-d2" onmouseover="hoverNode('node-v1-d2')" onmouseout="hoverNode('')" onclick="showModal('v1-d2')">
+                                <strong>V1 - Dimensión 2</strong>
+                                <span>Canales de Venta Digital</span>
+                            </div>
+                            <div class="tree-node node-dim-v1" id="node-v1-d3" onmouseover="hoverNode('node-v1-d3')" onmouseout="hoverNode('')" onclick="showModal('v1-d3')">
+                                <strong>V1 - Dimensión 3</strong>
+                                <span>Geolocalización Local</span>
+                            </div>
+                        </div>
+                        <div class="pyramid-col-stack">
+                            <div class="tree-node node-pg" id="node-og" onmouseover="hoverNode('node-og')" onmouseout="hoverNode('')" onclick="showModal('objetivo_gen')">
+                                <strong>Objetivo General (OG)</strong>
+                                <span>Determinar la relación entre V1 y V2</span>
+                            </div>
+                            <div class="tree-node node-pg" id="node-hg" onmouseover="hoverNode('node-hg')" onmouseout="hoverNode('')" onclick="showModal('hipotesis_gen')">
+                                <strong>Hipótesis General (HG)</strong>
+                                <span>Existe relación directa y significativa</span>
+                            </div>
+                        </div>
+                        <div class="pyramid-col-stack">
+                            <div class="tree-node node-dim-v2" id="node-v2-d1" onmouseover="hoverNode('node-v2-d1')" onmouseout="hoverNode('')" onclick="showModal('v2-d1')">
+                                <strong>V2 - Dimensión 1</strong>
+                                <span>Flujo de Ingresos Monetarios</span>
+                            </div>
+                            <div class="tree-node node-dim-v2" id="node-v2-d2" onmouseover="hoverNode('node-v2-d2')" onmouseout="hoverNode('')" onclick="showModal('v2-d2')">
+                                <strong>V2 - Dimensión 2</strong>
+                                <span>Eficiencia Operativa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Etiqueta de derivación -->
+                    <div class="derivation-label">
+                        <span>De cada dimensión se extraen los <strong>indicadores</strong> (ítems del cuestionario que miden cada concepto)</span>
+                    </div>
+
+                    <!-- NIVEL 4: INDICADORES -->
+                    <div class="pyramid-row pyramid-level-4">
+                        <div class="pyramid-col-stack">
+                            <div class="tree-node node-ind-v1" id="node-v1-d1-ind" onmouseover="hoverNode('node-v1-d1-ind')" onmouseout="hoverNode('')" onclick="showModal('v1-d1-ind')">
+                                <strong>Indicadores V1-D1</strong>
+                                <span>Ítems 1-4: Yape/Plin, POS, QR, Banca móvil</span>
+                            </div>
+                            <div class="tree-node node-ind-v1" id="node-v1-d2-ind" onmouseover="hoverNode('node-v1-d2-ind')" onmouseout="hoverNode('')" onclick="showModal('v1-d2-ind')">
+                                <strong>Indicadores V1-D2</strong>
+                                <span>Ítems 5-8: WhatsApp, Catálogos, RRSS, Publicidad</span>
+                            </div>
+                            <div class="tree-node node-ind-v1" id="node-v1-d3-ind" onmouseover="hoverNode('node-v1-d3-ind')" onmouseout="hoverNode('')" onclick="showModal('v1-d3-ind')">
+                                <strong>Indicadores V1-D3</strong>
+                                <span>Ítems 9-12: Maps, Grupos FB, WhatsApp local, SEO</span>
+                            </div>
+                        </div>
+                        <div class="pyramid-col-stack">
+                            <div class="tree-node node-ind-v2" id="node-v2-d1-ind" onmouseover="hoverNode('node-v2-d1-ind')" onmouseout="hoverNode('')" onclick="showModal('v2-d1-ind')">
+                                <strong>Indicadores V2-D1</strong>
+                                <span>Ítems 13-18: Recaudo %, Ticket, Recompra, ROI</span>
+                            </div>
+                            <div class="tree-node node-ind-v2" id="node-v2-d2-ind" onmouseover="hoverNode('node-v2-d2-ind')" onmouseout="hoverNode('')" onclick="showModal('v2-d2-ind')">
+                                <strong>Indicadores V2-D2</strong>
+                                <span>Ítems 19-24: Vuelto, Arqueo, Seguridad, Errores</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Etiqueta de derivación -->
+                    <div class="derivation-label">
+                        <span>Al cruzar una <strong>dimensión de V1</strong> con <strong>V2</strong> se formula cada <strong>problema específico</strong>. De cada PE se deriva su <strong>OE</strong> y <strong>HE</strong></span>
+                    </div>
+
+                    <!-- NIVEL 5: PROBLEMAS, OBJETIVOS E HIPÓTESIS ESPECÍFICAS (Base de la Pirámide) -->
+                    <div class="pyramid-row pyramid-level-5">
+                        <!-- Eje 1 -->
+                        <div class="pyramid-axis-group axis-group-1">
+                            <div class="axis-group-label">Eje 1: Medios de Pago × Desempeño</div>
+                            <div class="axis-group-nodes">
+                                <div class="tree-node node-pe" id="node-pe1" onmouseover="hoverNode('node-pe1')" onmouseout="hoverNode('')" onclick="showModal('pe1')">
+                                    <strong>PE1</strong>
+                                    <span>¿Relación Medios de Pago con Desempeño?</span>
+                                </div>
+                                <div class="tree-node node-oe" id="node-oe1" onmouseover="hoverNode('node-oe1')" onmouseout="hoverNode('')" onclick="showModal('oe1')">
+                                    <strong>OE1</strong>
+                                    <span>Determinar relación Medios con Desempeño</span>
+                                </div>
+                                <div class="tree-node node-he" id="node-he1" onmouseover="hoverNode('node-he1')" onmouseout="hoverNode('')" onclick="showModal('he1')">
+                                    <strong>HE1</strong>
+                                    <span>Existe relación directa</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Eje 2 -->
+                        <div class="pyramid-axis-group axis-group-2">
+                            <div class="axis-group-label">Eje 2: Canales Venta × Desempeño</div>
+                            <div class="axis-group-nodes">
+                                <div class="tree-node node-pe" id="node-pe2" onmouseover="hoverNode('node-pe2')" onmouseout="hoverNode('')" onclick="showModal('pe2')">
+                                    <strong>PE2</strong>
+                                    <span>¿Relación Canales con Desempeño?</span>
+                                </div>
+                                <div class="tree-node node-oe" id="node-oe2" onmouseover="hoverNode('node-oe2')" onmouseout="hoverNode('')" onclick="showModal('oe2')">
+                                    <strong>OE2</strong>
+                                    <span>Determinar relación Canales con Desempeño</span>
+                                </div>
+                                <div class="tree-node node-he" id="node-he2" onmouseover="hoverNode('node-he2')" onmouseout="hoverNode('')" onclick="showModal('he2')">
+                                    <strong>HE2</strong>
+                                    <span>Existe relación directa</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Eje 3 -->
+                        <div class="pyramid-axis-group axis-group-3">
+                            <div class="axis-group-label">Eje 3: Geolocalización × Desempeño</div>
+                            <div class="axis-group-nodes">
+                                <div class="tree-node node-pe" id="node-pe3" onmouseover="hoverNode('node-pe3')" onmouseout="hoverNode('')" onclick="showModal('pe3')">
+                                    <strong>PE3</strong>
+                                    <span>¿Relación Geolocalización con Desempeño?</span>
+                                </div>
+                                <div class="tree-node node-oe" id="node-oe3" onmouseover="hoverNode('node-oe3')" onmouseout="hoverNode('')" onclick="showModal('oe3')">
+                                    <strong>OE3</strong>
+                                    <span>Determinar relación Localización con Desempeño</span>
+                                </div>
+                                <div class="tree-node node-he" id="node-he3" onmouseover="hoverNode('node-he3')" onmouseout="hoverNode('')" onclick="showModal('he3')">
+                                    <strong>HE3</strong>
+                                    <span>Existe relación directa</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- VARIABLES Y OPERACIONALIZACIÓN -->
+        <section id="variables" class="section-block fade-in-section">
+            <h2 class="section-title">Variables y Matriz de Operacionalización</h2>
+            <div class="section-intro-box">
+                <h4>¿Qué es la Operacionalización?</h4>
+                <p>Es el proceso de traducir conceptos abstractos (las variables) en elementos medibles directamente en la realidad (los indicadores e ítems). Despliega los acordeones para ver la estructura lógica de nuestras variables.</p>
+            </div>
+
+            <div class="variables-accordion-container">
+                
+                <!-- VARIABLE V1 -->
+                <details class="variable-accordion">
+                    <summary class="accordion-header">
+                        Variable Independiente (V1): Adopción de Sistemas Digitales
+                    </summary>
+                    <div class="accordion-content">
+                        <p style="margin-bottom: 2rem;">
+                            <strong>Definición Conceptual:</strong> Grado e intensidad de implementación operativa de herramientas y canales digitales orientados a facilitar transacciones financieras en mostrador, entablar contacto comercial continuo con clientes mediante mensajería, y optimizar el posicionamiento geográfico local en mapas digitales en el distrito de Bellavista.
+                        </p>
+
+                        <!-- D1.1 -->
+                        <div class="dimension-box">
+                            <div class="dimension-title">Dimensión 1: Medios de Pago Electrónicos</div>
+                            <div class="indicator-item-list">
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">1. Frecuencia de cobros digitales diarios</div>
+                                        <span class="indicator-item-badge">Ítem 1</span>
+                                    </div>
+                                    <div class="indicator-desc">Evalúa el volumen de operaciones cotidianas resueltas por billeteras móviles (Yape o Plin).</div>
+                                    <div class="indicator-question-box">"¿El establecimiento procesa transacciones corrientes de cobro de manera diaria a través de billeteras digitales móviles (Yape o Plin)?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">2. Proporción semanal cobrada con medios electrónicos</div>
+                                        <span class="indicator-item-badge">Ítem 2</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide el peso transaccional de los terminales POS (tarjetas de crédito/débito) sobre la venta semanal.</div>
+                                    <div class="indicator-question-box">"¿El negocio dispone y utiliza activamente terminales de punto de venta físicos o móviles (mPOS como Izipay, Niubiz, Vendemás) para aceptar pagos con tarjetas?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">3. Disponibilidad física de material visual QR oficial</div>
+                                        <span class="indicator-item-badge">Ítem 3</span>
+                                    </div>
+                                    <div class="indicator-desc">Estudia la distribución y visibilidad de códigos QR impresos para la autogestión de cobros en caja.</div>
+                                    <div class="indicator-question-box">"¿El establecimiento cuenta con códigos QR oficiales impresos, plastificados y distribuidos visiblemente en la zona de caja?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">4. Uso operativo de transferencias bancarias directas</div>
+                                        <span class="indicator-item-badge">Ítem 4</span>
+                                    </div>
+                                    <div class="indicator-desc">Analiza el uso cotidiano de transferencias bancarias electrónicas de abono inmediato en banca móvil.</div>
+                                    <div class="indicator-question-box">"¿El negocio realiza o acepta transferencias bancarias directas de abono inmediato para liquidar compras corrientes?"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- D1.2 -->
+                        <div class="dimension-box">
+                            <div class="dimension-title">Dimensión 2: Canales de Venta y Atención Digital</div>
+                            <div class="indicator-item-list">
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">5. Uso comercial operativo de WhatsApp</div>
+                                        <span class="indicator-item-badge">Ítem 5</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide si se utiliza WhatsApp de forma activa como canal comercial para recibir pedidos y enviar precios.</div>
+                                    <div class="indicator-question-box">"¿El establecimiento utiliza la aplicación WhatsApp (Personal o Business) de forma operativa para recibir pedidos de productos, enviar listas de precios y coordinar entregas?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">6. Disposición de catálogos y menús digitales</div>
+                                        <span class="indicator-item-badge">Ítem 6</span>
+                                    </div>
+                                    <div class="indicator-desc">Verifica la estructuración técnica de catálogos o menús dinámicos para los clientes.</div>
+                                    <div class="indicator-question-box">"¿El negocio cuenta con herramientas digitales estructuradas (catálogos virtuales, menús interactivos o portafolios digitales de productos) accesibles para sus consumidores?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">7. Gestión comercial de redes sociales y webs propias</div>
+                                        <span class="indicator-item-badge">Ítem 7</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide la administración de perfiles comerciales (Facebook, Instagram) o plataformas web propias.</div>
+                                    <div class="indicator-question-box">"¿El negocio posee y gestiona una página web propia (sitio informativo o tienda virtual) o un perfil comercial corporativo en redes sociales para exhibir su stock?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">8. Inversión monetaria en publicidad digital local</div>
+                                        <span class="indicator-item-badge">Ítem 8</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide si se asignan recursos a pautas pagadas (Facebook Ads, Instagram Ads) de alcance local.</div>
+                                    <div class="indicator-question-box">"¿La microempresa invierte recursos en publicidad digital pagada para atraer clientes de zonas aledañas en el distrito de Bellavista?"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- D1.3 -->
+                        <div class="dimension-box">
+                            <div class="dimension-title">Dimensión 3: Visibilidad y Geolocalización Local</div>
+                            <div class="indicator-item-list">
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">9. Exactitud del registro geográfico en Google Maps</div>
+                                        <span class="indicator-item-badge">Ítem 9</span>
+                                    </div>
+                                    <div class="indicator-desc">Verifica el posicionamiento de la ubicación real del negocio en mapas interactivos y su optimización.</div>
+                                    <div class="indicator-question-box">"¿El establecimiento comercial se encuentra registrado con su ubicación geográfica exacta, nombre oficial y categoría en la plataforma Google Maps o Waze?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">10. Participación en ofertas en grupos digitales locales</div>
+                                        <span class="indicator-item-badge">Ítem 10</span>
+                                    </div>
+                                    <div class="indicator-desc">Evalúa la difusión en comunidades digitales locales y grupos vecinales de Facebook del distrito.</div>
+                                    <div class="indicator-question-box">"¿El negocio publica ofertas, promociones o anuncios de sus productos en comunidades, grupos vecinales o páginas de Facebook de su zona de influencia en Bellavista?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">11. Uso de grupos y listas de difusión vecinales</div>
+                                        <span class="indicator-item-badge">Ítem 11</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide la fidelización del stock diario mediante grupos cerrados y listas de difusión de WhatsApp vecinal.</div>
+                                    <div class="indicator-question-box">"¿El establecimiento utiliza sistema de mensajería masiva local (grupos de difusión de vecinos de la cuadra o comunidades de WhatsApp) para fidelizar y comunicar el stock?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">12. Aplicación de etiquetas de búsqueda móvil local</div>
+                                        <span class="indicator-item-badge">Ítem 12</span>
+                                    </div>
+                                    <div class="indicator-desc">Analiza el aprovechamiento del SEO local para aparecer en búsquedas cercanas (ej. 'bodega abierta').</div>
+                                    <div class="indicator-question-box">"¿El negocio aprovecha las herramientas de optimización de búsqueda local (SEO Local) o etiquetas de ubicación digital para aparecer en las búsquedas móviles cuando un usuario busca palabras clave?"</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <!-- VARIABLE V2 -->
+                <details class="variable-accordion">
+                    <summary class="accordion-header">
+                        Variable Dependiente (V2): Desempeño Comercial
+                    </summary>
+                    <div class="accordion-content">
+                        <p style="margin-bottom: 2rem;">
+                            <strong>Definición Conceptual:</strong> Nivel de logro y resultados transaccionales y operativos de la microempresa minorista, reflejados en el aumento de la facturación semanal por canales digitales, la velocidad diaria de acumulación de efectivo, el incremento de recompra, y la simplificación de tareas de cierre diario, cuadres de caja y mitigación de riesgos de seguridad.
+                        </p>
+
+                        <!-- D2.1 -->
+                        <div class="dimension-box">
+                            <div class="dimension-title">Dimensión 1: Flujo de Ingresos Monetarios</div>
+                            <div class="indicator-item-list">
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">13. Proporción de recaudación digital semanal</div>
+                                        <span class="indicator-item-badge">Ítem 13</span>
+                                    </div>
+                                    <div class="indicator-desc">Estima el porcentaje de ingresos que fluyen directamente por billeteras o POS móviles.</div>
+                                    <div class="indicator-question-box">"De los ingresos monetarios semanales totales que recauda su comercio, ¿qué proporción aproximada de dinero ingresa directamente por canales digitales (billeteras/tarjetas)?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">14. Rango del ticket promedio de compra por cliente</div>
+                                        <span class="indicator-item-badge">Ítem 14</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide el valor medio de consumo por transacción procesada digitalmente en el local.</div>
+                                    <div class="indicator-question-box">"¿En qué rango se sitúa el ticket promedio de compra por cada transacción individual de cliente que se procesa a través de los sistemas digitales instalados en su negocio?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">15. Velocidad de acumulación de ingresos diarios</div>
+                                        <span class="indicator-item-badge">Ítem 15</span>
+                                    </div>
+                                    <div class="indicator-desc">Compara la velocidad corriente de recaudación frente a la operación puramente analógica tradicional.</div>
+                                    <div class="indicator-question-box">"Al comparar la velocidad de acumulación de los ingresos diarios corrientes actuales frente a la época en que su negocio operaba de forma tradicional o analógica, ¿qué comportamiento registra?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">16. Flexibilidad de límites diarios de cobro en caja</div>
+                                        <span class="indicator-item-badge">Ítem 16</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide el impacto de condicionantes de compra (montos mínimos de pago digital) sobre el flujo.</div>
+                                    <div class="indicator-question-box">"Respecto a las restricciones en la recaudación diaria, ¿cómo maneja su negocio la aceptación de flujos digitales corrientes sin condicionar la compra?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">17. Frecuencia de compras recurrentes de clientes</div>
+                                        <span class="indicator-item-badge">Ítem 17</span>
+                                    </div>
+                                    <div class="indicator-desc">Cuantifica el papel de la comodidad de pago digital en la retención y fidelización de la clientela local.</div>
+                                    <div class="indicator-question-box">"¿Con qué frecuencia observa que los clientes vuelven a comprar a su negocio motivados por las facilidades de pago y atención digital que usted ofrece en su local?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">18. Aumento de ingresos por promociones digitales</div>
+                                        <span class="indicator-item-badge">Ítem 18</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide el impacto económico de campañas promocionales digitales de liquidación de stock.</div>
+                                    <div class="indicator-question-box">"Al realizar promociones, ofertas especiales o liquidación de stock a través de canales digitales, ¿qué nivel de impacto registra en el volumen total de ingresos semanales?"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- D2.2 -->
+                        <div class="dimension-box">
+                            <div class="dimension-title">Dimensión 2: Eficiencia Operativa del Servicio</div>
+                            <div class="indicator-item-list">
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">19. Mitigación de pérdida de ventas por escasez de vuelto</div>
+                                        <span class="indicator-item-badge">Ítem 19</span>
+                                    </div>
+                                    <div class="indicator-desc">Evalúa la reducción de pérdidas comerciales tradicionales por falta de monedas de sencillo físico.</div>
+                                    <div class="indicator-question-box">"Pensando en las ventas frustradas, ¿con qué frecuencia su microempresa ha evitado perder clientes y ventas gracias a que los cobros digitales anulan la necesidad de dar vuelto en efectivo (sencillo)?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">20. Agilidad en tiempo de cierre y cobro en mostrador</div>
+                                        <span class="indicator-item-badge">Ítem 20</span>
+                                    </div>
+                                    <div class="indicator-desc">Cuantifica la velocidad media para concretar el cobro frente al conteo analógico tradicional.</div>
+                                    <div class="indicator-question-box">"En promedio, ¿cuánto tiempo toma concretar el cierre de una venta y procesar el cobro de un cliente cuando se utilizan los sistemas digitales en comparación con el efectivo tradicional?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">21. Facilidad operativa del cuadre de caja diario</div>
+                                        <span class="indicator-item-badge">Ítem 21</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide la simplificación administrativa del arqueo diario nocturno apoyado en historiales de apps.</div>
+                                    <div class="indicator-question-box">"¿Qué nivel de facilidad o simplificación práctica experimenta al realizar el balance y cuadre de caja diario al final de la jornada de su microempresa?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">22. Reducción de exposición de dinero físico</div>
+                                        <span class="indicator-item-badge">Ítem 22</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide la disminución del volumen de dinero físico expuesto en mostrador a riesgos de robo delictivo.</div>
+                                    <div class="indicator-question-box">"¿En qué medida la adopción de estos sistemas digitales ha reducido la cantidad de dinero en efectivo acumulado físicamente en la caja del local, disminuyendo los riesgos de robos en el distrito?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">23. Reducción de tiempos en depósitos en bancos</div>
+                                        <span class="indicator-item-badge">Ítem 23</span>
+                                    </div>
+                                    <div class="indicator-desc">Analiza el ahorro de traslados logísticos riesgosos para centralizar fondos en bancos locales.</div>
+                                    <div class="indicator-question-box">"¿En qué medida el uso de canales y pagos digitales ha reducido el tiempo que el microempresario o su personal debe dedicar a trasladarse físicamente para depositar dinero en agencias bancarias o cajeros?"</div>
+                                </div>
+                                <div class="indicator-card">
+                                    <div class="indicator-meta">
+                                        <div class="indicator-name">24. Disminución de errores humanos en cobranza manual</div>
+                                        <span class="indicator-item-badge">Ítem 24</span>
+                                    </div>
+                                    <div class="indicator-desc">Mide el impacto de las transacciones digitales en la reducción de vuelto errado o aceptación de dinero falso.</div>
+                                    <div class="indicator-question-box">"¿En qué medida la adopción de sistemas digitales ha disminuido la comisión de errores humanos (como vuelto errado, cuadres incorrectos o aceptación de billetes falsos) en la cobranza de su negocio?"</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </details>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CÓMO SE CONSTRUYE EL PROBLEMA -->
+        <section id="problema" class="section-block fade-in-section">
+            <h2 class="section-title">¿Cómo se plantea el Problema de Investigación?</h2>
+
+            <!-- REALIDAD PROBLEMÁTICA CON EL MÉTODO DEL EMBUDO -->
+            <div class="edu-card" style="margin-bottom: 2rem;">
+                <h3 style="font-family: var(--font-title); color: var(--color-primary); margin-bottom: 1rem; text-align: center;">La Realidad Problemática: Método del Embudo</h3>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 1.5rem auto;">
+                    Para redactar la realidad problemática de forma científica, se utiliza el <strong>método del embudo</strong>: partiendo del contexto global hasta llegar a la situación particular de estudio en Bellavista. Haz clic en cada nivel para conocer su desarrollo metodológico.
+                </p>
+                
+                <div class="funnel-wrapper">
+                    <!-- Nivel 1: Global (Macro) -->
+                    <div class="funnel-level level-macro" onclick="selectFunnelLevel('macro')">
+                        <div class="funnel-shape">
+                            <span class="funnel-tag">Nivel Macro (Global)</span>
+                            <span class="funnel-title">Revolución Digital y Microempresas</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Nivel 2: Nacional (Meso) -->
+                    <div class="funnel-level level-meso" onclick="selectFunnelLevel('meso')">
+                        <div class="funnel-shape">
+                            <span class="funnel-tag">Nivel Meso (Perú)</span>
+                            <span class="funnel-title">Brecha Digital y Billeteras Electrónicas</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Nivel 3: Local (Micro) -->
+                    <div class="funnel-level level-micro" onclick="selectFunnelLevel('micro')">
+                        <div class="funnel-shape">
+                            <span class="funnel-tag">Nivel Micro (Bellavista, Callao)</span>
+                            <span class="funnel-title">Desempeño y Geolocalización Fáctica</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalle del nivel seleccionado -->
+                <div class="funnel-detail-box" id="funnel-detail">
+                    <h4 id="funnel-detail-title" style="color: var(--color-gold); margin-bottom: 0.5rem;">Selecciona un nivel del embudo</h4>
+                    <p id="funnel-detail-desc" style="margin-bottom: 0;">Haz clic en cualquiera de las tres secciones superiores para ver la redacción y justificación de la realidad problemática en ese nivel del embudo.</p>
+                </div>
+            </div>
+            
+            <div class="edu-card">
+                <p>
+                    El planteamiento del problema científico sigue una estructura matemática estricta. Aquí te enseñamos cómo se construye paso a paso usando la fórmula de redacción científica:
+                </p>
+
+                <!-- FÓRMULA GENERAL -->
+                <div class="formula-instruction-box">
+                    <span class="formula-instruction-tag font-red">🔴 FÓRMULA: PROBLEMA GENERAL</span>
+                    <div class="formula-instruction-syntax">
+                        ¿PREGUNTA CLAVE + VARIABLE 1 + NEXO (relaciona/influye) + VARIABLE 2 + SUJETO + LUGAR + AÑO?
+                    </div>
+                    <div class="formula-instruction-example">
+                        <strong>Ejemplo de tu proyecto:</strong> "¿De qué manera la <span class="badge-tag tag-v1">adopción de sistemas digitales</span> se relaciona con el <span class="badge-tag tag-v2">desempeño comercial</span> de las microempresas del sector comercio en el distrito de Bellavista, Callao, 2026?"
+                    </div>
+                </div>
+
+                <!-- FÓRMULA ESPECÍFICOS -->
+                <div class="formula-instruction-box" style="margin-top: 1rem;">
+                    <span class="formula-instruction-tag font-red">🔴 FÓRMULA: PROBLEMAS ESPECÍFICOS</span>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--color-text-muted);">
+                        Desglosas la interrogante cruzando dimensión por dimensión de tus variables (D₁-V₁ con D₁-V₂ y D₂-V₂, etc.):
+                    </p>
+                    <div class="formula-instruction-syntax">
+                        ¿PREGUNTA CLAVE + DIMENSIÓN DE V1 + NEXO + DIMENSIÓN DE V2 + SUJETO + CONTEXTO?
+                    </div>
+                    <div class="formula-instruction-example" style="font-size: 0.88rem;">
+                        <strong>PE1 (Eje Medios de Pago):</strong> "¿De qué manera los <span class="badge-tag tag-v1">medios de pago electrónicos</span> se relacionan con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas del sector comercio en Bellavista, Callao, 2026?"<br>
+                        <strong>PE2 (Eje Canales de Venta):</strong> "¿De qué manera los <span class="badge-tag tag-v1">canales de venta y atención digital</span> se relacionan con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas del sector comercio en Bellavista, Callao, 2026?"<br>
+                        <strong>PE3 (Eje Geolocalización):</strong> "¿De qué manera la <span class="badge-tag tag-v1">visibilidad y geolocalización local</span> se relaciona con la <span class="badge-tag tag-v2">eficiencia operativa</span> de las microempresas del sector comercio en Bellavista, Callao, 2026?"
+                    </div>
+                </div>
+
+                <!-- PALABRAS CLAVE -->
+                <div style="margin-top: 1rem; background-color: var(--color-card-bg); padding: 0.8rem 1.2rem; border-radius: 6px; border-left: 3px solid var(--color-primary); font-size: 0.9rem;">
+                    <strong>Palabras clave recomendadas para iniciar preguntas:</strong>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                        <span class="badge-tag">¿Cómo?</span>
+                        <span class="badge-tag">¿De qué manera?</span>
+                        <span class="badge-tag">¿De qué forma?</span>
+                        <span class="badge-tag">¿En qué medida?</span>
+                        <span class="badge-tag">¿Cuál es la relación entre...?</span>
+                    </div>
+                </div>
+
+                <!-- PARSER INTERACTIVO -->
+                <div class="parser-interactive">
+                    <div class="parser-title">Analizador Sintáctico de Redacción Científica</div>
+                    
+                    <!-- Tabs de Categoría -->
+                    <div class="parser-category-tabs">
+                        <button class="parser-cat-btn active" id="btn-cat-problema" onclick="switchParserCategory('problema')">Problemas 🔴</button>
+                        <button class="parser-cat-btn" id="btn-cat-objetivo" onclick="switchParserCategory('objetivo')">Objetivos 🟡</button>
+                        <button class="parser-cat-btn" id="btn-cat-hipotesis" onclick="switchParserCategory('hipotesis')">Hipótesis 🟢</button>
+                    </div>
+
+                    <p style="font-size: 0.95rem; text-align: center; color: var(--color-text-muted); margin-bottom: 1.5rem; margin-top: 1rem;">
+                        Haz clic en los botones de leyenda para <strong>resaltar visualmente</strong> las partes metodológicas en la fórmula y en el texto real.
+                    </p>
+                    
+                    <div class="parser-legends">
+                        <button class="legend-btn btn-verbo" onclick="toggleHighlight('verbo')">Verbo / Pregunta</button>
+                        <button class="legend-btn btn-v1" onclick="toggleHighlight('v1')">Variable 1 / Dimensión</button>
+                        <button class="legend-btn btn-nexo" onclick="toggleHighlight('nexo')">Nexo Relacional</button>
+                        <button class="legend-btn btn-v2" onclick="toggleHighlight('v2')">Variable 2 / Desempeño</button>
+                        <button class="legend-btn btn-poblacion" onclick="toggleHighlight('poblacion')">Población (N)</button>
+                        <button class="legend-btn btn-espacio" onclick="toggleHighlight('espacio')">Lugar / Espacio</button>
+                        <button class="legend-btn btn-tiempo" onclick="toggleHighlight('tiempo')">Año / Tiempo</button>
+                    </div>
+
+                    <!-- FÓRMULA VS TEXTO REAL -->
+                    <div class="parser-display-layout">
+                        <div class="parser-display-box formula-box-display">
+                            <div class="parser-label">Fórmula Metodológica Estructural</div>
+                            <div class="parser-text" id="parser-formula-text">
+                                Carga de fórmula...
+                            </div>
+                        </div>
+
+                        <div class="parser-display-box text-box-display">
+                            <div class="parser-label" id="parser-type-label">Redacción Real de la Tesis</div>
+                            <div class="parser-text" id="parser-output-text">
+                                Carga de texto...
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="parser-selectors">
+                        <button class="parser-select-btn active" id="btn-scope-general" onclick="switchParserScope('general')">General</button>
+                        <button class="parser-select-btn" id="btn-scope-pe1" onclick="switchParserScope('pe1')">Específico 1 (D1)</button>
+                        <button class="parser-select-btn" id="btn-scope-pe2" onclick="switchParserScope('pe2')">Específico 2 (D2)</button>
+                        <button class="parser-select-btn" id="btn-scope-pe3" onclick="switchParserScope('pe3')">Específico 3 (D3)</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CÓMO SE CONSTRUYEN LOS OBJETIVOS -->
+        <section id="objetivos" class="section-block fade-in-section">
+            <h2 class="section-title">Correspondencia 1:1 con Objetivos</h2>
+            
+            <div class="edu-card">
+                <p>
+                    Los objetivos representan las metas concretas de tu tesis. Tienen correspondencia exacta de 1:1 con tus preguntas de investigación, reemplazando la interrogante por un verbo infinitivo adecuado.
+                </p>
+
+                <!-- FÓRMULA GENERAL -->
+                <div class="formula-instruction-box">
+                    <span class="formula-instruction-tag font-yellow">🟡 FÓRMULA: OBJETIVO GENERAL</span>
+                    <div class="formula-instruction-syntax">
+                        VERBO AMPLIO + VARIABLE 1 + NEXO + VARIABLE 2 + SUJETO + LUGAR + AÑO
+                    </div>
+                    <div class="formula-instruction-example">
+                        <strong>Ejemplo de tu proyecto:</strong> "Determinar de qué manera la <span class="badge-tag tag-v1">adopción de sistemas digitales</span> se relaciona con el <span class="badge-tag tag-v2">desempeño comercial</span> de las microempresas del sector comercio en el distrito de Bellavista, Callao, 2026."
+                    </div>
+                </div>
+
+                <!-- FÓRMULA ESPECÍFICOS -->
+                <div class="formula-instruction-box" style="margin-top: 1rem;">
+                    <span class="formula-instruction-tag font-yellow">🟡 FÓRMULA: OBJETIVOS ESPECÍFICOS</span>
+                    <div class="formula-instruction-syntax">
+                        VERBO ESPECÍFICO + DIMENSIÓN DE V1 + NEXO + DIMENSIÓN DE V2 + SUJETO + CONTEXTO
+                    </div>
+                    <div class="formula-instruction-example" style="font-size: 0.88rem;">
+                        <strong>OE1 (Eje Medios de Pago):</strong> "Identificar de qué manera los <span class="badge-tag tag-v1">medios de pago electrónicos</span> se relacionan con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas del sector comercio en Bellavista, Callao, 2026."<br>
+                        <strong>OE2 (Eje Canales de Venta):</strong> "Establecer de qué manera los <span class="badge-tag tag-v1">canales de venta y atención digital</span> se relacionan con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas del sector comercio en Bellavista, Callao, 2026."<br>
+                        <strong>OE3 (Eje Geolocalización):</strong> "Analizar de qué manera la <span class="badge-tag tag-v1">visibilidad y geolocalización local</span> se relaciona con la <span class="badge-tag tag-v2">eficiencia operativa</span> de las microempresas del sector comercio en Bellavista, Callao, 2026."
+                    </div>
+                </div>
+
+                <!-- TAXONOMÍA DE VERBOS POR TIPO DE ESTUDIO -->
+                <div style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+                    <h4 style="font-family: var(--font-title); margin-bottom: 0.5rem; color: var(--color-secondary); font-size: 0.95rem;">Verbos Recomendados por Tipo de Estudio:</h4>
+                    <div class="comparison-table-wrapper">
+                        <table class="comparison-table" style="font-size: 0.88rem;">
+                            <thead>
+                                <tr>
+                                    <th>Tipo de Estudio</th>
+                                    <th>Verbos Generales</th>
+                                    <th>Verbos Específicos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Descriptiva</strong></td>
+                                    <td>Describir, caracterizar</td>
+                                    <td>Identificar, clasificar, listar</td>
+                                </tr>
+                                <tr style="background-color: rgba(160, 132, 92, 0.05);">
+                                    <td><strong>Correlacional (Este Proyecto)</strong></td>
+                                    <td><strong>Determinar</strong>, establecer</td>
+                                    <td><strong>Relacionar</strong>, comparar, medir</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Explicativa</strong></td>
+                                    <td>Analizar, demostrar</td>
+                                    <td>Contrastar, explicar, evaluar</td>
+                                </tr>
+                                <tr style="background-color: rgba(160, 132, 92, 0.05);">
+                                    <td><strong>Propositiva</strong></td>
+                                    <td>Proponer, diseñar</td>
+                                    <td>Formular, elaborar, desarrollar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN: CÓMO SE CONSTRUYEN LAS HIPÓTESIS -->
+        <section id="hipotesis" class="section-block fade-in-section">
+            <h2 class="section-title">Hipótesis Científicas y Decisiones de p-valor</h2>
+            
+            <div class="edu-card">
+                <p>
+                    Una **Hipótesis** es la respuesta tentativa o proposición teórica que el investigador postula frente al problema planteado. Debe redactarse afirmando la existencia de la relación directa y significativa entre las variables.
+                </p>
+
+                <!-- FÓRMULA GENERAL -->
+                <div class="formula-instruction-box">
+                    <span class="formula-instruction-tag font-green">🟢 FÓRMULA: HIPÓTESIS GENERAL</span>
+                    <div class="formula-instruction-syntax">
+                        SUJETO + VARIABLE 1 (Independiente) + NEXO AFIRMATIVO + VARIABLE 2 (Dependiente) + CONTEXTO
+                    </div>
+                    <div class="formula-instruction-example">
+                        <strong>Ejemplo de tu proyecto:</strong> "La <span class="badge-tag tag-v1">adopción de sistemas digitales</span> se relaciona significativamente con el <span class="badge-tag tag-v2">desempeño comercial</span> de las microempresas del sector comercio en el distrito de Bellavista, Callao, 2026."
+                    </div>
+                </div>
+
+                <!-- FÓRMULA ESPECÍFICAS -->
+                <div class="formula-instruction-box" style="margin-top: 1rem;">
+                    <span class="formula-instruction-tag font-green">🟢 FÓRMULA: HIPÓTESIS ESPECÍFICAS</span>
+                    <div class="formula-instruction-syntax">
+                        SUJETO + DIMENSIÓN DE V1 + NEXO AFIRMATIVO + DIMENSIÓN DE V2 + CONTEXTO
+                    </div>
+                    <div class="formula-instruction-example" style="font-size: 0.88rem;">
+                        <strong>HE1 (Eje Medios de Pago):</strong> "Los <span class="badge-tag tag-v1">medios de pago electrónicos</span> se relacionan significativamente con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas del sector comercio en Bellavista, Callao, 2026."<br>
+                        <strong>HE2 (Eje Canales de Venta):</strong> "Los <span class="badge-tag tag-v1">canales de venta y atención digital</span> se relacionan significativamente con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas del sector comercio en Bellavista, Callao, 2026."<br>
+                        <strong>HE3 (Eje Geolocalización):</strong> "La <span class="badge-tag tag-v1">visibilidad y geolocalización local</span> se relaciona significativamente con la <span class="badge-tag tag-v2">eficiencia operativa</span> de las microempresas del sector comercio en Bellavista, Callao, 2026."
+                    </div>
+                </div>
+
+                <!-- NEXOS AFIRMATIVOS COMUNES -->
+                <div style="margin-top: 1rem; background-color: var(--color-card-bg); padding: 0.8rem 1.2rem; border-radius: 6px; border-left: 3px solid var(--color-secondary); font-size: 0.9rem;">
+                    <strong>Nexos afirmativos comunes recomendados:</strong>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                        <span class="badge-tag">influye significativamente en</span>
+                        <span class="badge-tag">se relaciona positivamente con</span>
+                        <span class="badge-tag">tiene efecto directo en</span>
+                        <span class="badge-tag">se asocia directamente con</span>
+                    </div>
+                </div>
+
+                <p style="margin-top: 2rem; margin-bottom: 1.5rem;">
+                    En la estadística inferencial, se contrastan dos hipótesis contrapuestas bajo un margen de error del 5% (&alpha; = 0.05):
+                </p>
+
+                <!-- REGLAS DE DECISIÓN -->
+                <div class="hypothesis-rule-box">
+                    <div class="rule-card rule-reject">
+                        <h5>Hipótesis Nula (H₀)</h5>
+                        <div class="rule-formula">$$\text{p-valor} > 0.05$$</div>
+                        <p style="font-size: 0.95rem;">
+                            <strong>Significado:</strong> No existe relación estadísticamente significativa entre la adopción de sistemas digitales y el desempeño comercial. Si el p-valor calculado supera 0.05, <strong>se acepta H₀</strong> y se descarta el proyecto.
+                        </p>
+                    </div>
+
+                    <div class="rule-card rule-accept">
+                        <h5>Hipótesis Alterna (H₁)</h5>
+                        <div class="rule-formula">$$\text{p-valor} \le 0.05$$</div>
+                        <p style="font-size: 0.95rem;">
+                            <strong>Significado:</strong> Existe una relación directa y significativa entre la adopción digital y el desempeño comercial. Si el p-valor es igual o menor a 0.05, <strong>se rechaza H₀ y se acepta H₁</strong>, validando la hipótesis del Grupo 5.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- HG OPERATIVA -->
+                <div style="margin-top: 2.5rem; background-color: var(--color-bg); padding: 1.25rem 1.5rem; border-radius: 8px; border: 1px solid var(--color-border); border-left: 4px solid var(--color-primary);">
+                    <p style="font-size: 1rem; margin: 0; line-height: 1.6;">
+                        <strong>Hipótesis General (HG):</strong> Existe una relación directa y significativa entre la <span class="badge-tag tag-v1">adopción de sistemas digitales</span> y el <span class="badge-tag tag-v2">desempeño comercial</span> de las microempresas del sector comercio en el distrito de Bellavista, Callao, 2026.
+                    </p>
+                </div>
+
+                <!-- TABLA MAESTRA Y REGLA DE ORO -->
+                <div style="margin-top: 3rem; border-top: 2px dashed var(--color-border); padding-top: 2rem;">
+                    <h3 style="font-family: var(--font-title); color: var(--color-primary); margin-bottom: 1rem;">🏆 Tabla Maestra: Consistencia y Alineación de Ejes</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem;">
+                        Esta tabla demuestra la alineación metodológica perfecta de la investigación, cruzando las dimensiones correspondientes para formar cada eje.
+                    </p>
+                    <div class="comparison-table-wrapper">
+                        <table class="comparison-table" style="font-size: 0.88rem;">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Problema Específico</th>
+                                    <th>Objetivo Específico</th>
+                                    <th>Hipótesis Específica</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>1</strong></td>
+                                    <td><strong>PE1:</strong> ¿De qué manera los <span class="badge-tag tag-v1">medios de pago electrónicos</span> se relacionan con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas de Bellavista en 2026?</td>
+                                    <td><strong>OE1:</strong> Identificar de qué manera los <span class="badge-tag tag-v1">medios de pago electrónicos</span> se relacionan con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas de Bellavista en 2026.</td>
+                                    <td><strong>HE1:</strong> Los <span class="badge-tag tag-v1">medios de pago electrónicos</span> se relacionan significativamente con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas de Bellavista en 2026.</td>
+                                </tr>
+                                <tr style="background-color: rgba(160, 132, 92, 0.03);">
+                                    <td><strong>2</strong></td>
+                                    <td><strong>PE2:</strong> ¿De qué manera los <span class="badge-tag tag-v1">canales de venta y atención digital</span> se relacionan con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas de Bellavista en 2026?</td>
+                                    <td><strong>OE2:</strong> Establecer de qué manera los <span class="badge-tag tag-v1">canales de venta y atención digital</span> se relacionan con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas de Bellavista en 2026.</td>
+                                    <td><strong>HE2:</strong> Los <span class="badge-tag tag-v1">canales de venta y atención digital</span> se relacionan significativamente con el <span class="badge-tag tag-v2">flujo de ingresos monetarios</span> de las microempresas de Bellavista en 2026.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>3</strong></td>
+                                    <td><strong>PE3:</strong> ¿De qué manera la <span class="badge-tag tag-v1">visibilidad y geolocalización local</span> se relaciona con la <span class="badge-tag tag-v2">eficiencia operativa</span> de las microempresas de Bellavista en 2026?</td>
+                                    <td><strong>OE3:</strong> Analizar de qué manera la <span class="badge-tag tag-v1">visibilidad y geolocalización local</span> se relaciona con la <span class="badge-tag tag-v2">eficiencia operativa</span> de las microempresas de Bellavista en 2026.</td>
+                                    <td><strong>HE3:</strong> La <span class="badge-tag tag-v1">visibilidad y geolocalización local</span> se relaciona significativamente con la <span class="badge-tag tag-v2">eficiencia operativa</span> de las microempresas de Bellavista en 2026.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem; background-color: rgba(78, 110, 126, 0.05); border-left: 4px solid var(--color-secondary); padding: 1.2rem; border-radius: 8px;">
+                        <h4 style="margin-bottom: 0.5rem; color: var(--color-secondary); font-family: var(--font-title);">💡 Regla de Oro Metodológica</h4>
+                        <p style="font-size: 0.95rem; margin: 0; line-height: 1.5;">
+                            El número de <strong>Problemas Específicos = Objetivos Específicos = Hipótesis Específicas</strong>. Siempre existe una relación simétrica de <strong>1 a 1 a 1</strong>, y todos derivan directamente del desglose de las dimensiones de tus variables de estudio.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- METODOLOGÍA EXPLICADA -->
+        <section id="metodologia" class="section-block fade-in-section">
+            <h2 class="section-title">Metodología y Fórmulas Estadísticas</h2>
+            
+            <div class="method-grid">
+                <!-- Enfoque -->
+                <div class="method-card">
+                    <div class="method-icon">📊</div>
+                    <h3>Enfoque Cuantitativo</h3>
+                    <p>Se recolectan datos numéricos de los 24 ítems fácticos para someterlos a análisis estadístico descriptivo e inferencial y probar las hipótesis planteadas de forma objetiva.</p>
+                    <div class="method-application">Aplicación: Procesamiento y análisis matricial de los cuestionarios en SPSS v26.</div>
+                </div>
+                <!-- Tipo -->
+                <div class="method-card">
+                    <div class="method-icon">🛠️</div>
+                    <h3>Tipo Aplicada</h3>
+                    <p>Orientada a resolver y diagnosticar problemas prácticos y de adopción tecnológica reales que afectan a la competitividad de las MYPES minoristas.</p>
+                    <div class="method-application">Aplicación: Propuesta de digitalización para mejorar el recaudo comercial de los comerciantes.</div>
+                </div>
+                <!-- Nivel -->
+                <div class="method-card">
+                    <div class="method-icon">🔄</div>
+                    <h3>Nivel Correlacional</h3>
+                    <p>Mide de manera independiente cada variable para luego analizar y establecer matemáticamente el grado de correlación que existe entre ambas variables.</p>
+                    <div class="method-application">Aplicación: Uso del estadístico correlacional no paramétrico de Spearman.</div>
+                </div>
+                <!-- Diseño -->
+                <div class="method-card">
+                    <div class="method-icon">⏱️</div>
+                    <h3>No Experimental / Transversal</h3>
+                    <p>No se manipulan de forma deliberada las variables independientes en laboratorio. Los datos se recolectan en un único momento del año 2026.</p>
+                    <div class="method-application">Aplicación: Recolección in-situ en una sola visita a cada establecimiento.</div>
+                </div>
+            </div>
+
+            <!-- FÓRMULAS MATEMÁTICAS -->
+            <div class="math-box">
+                <div class="math-grid">
+                    <div>
+                        <h3 style="font-family: var(--font-title); color: var(--color-primary); margin-bottom: 1rem;">Fórmula de Muestreo Probabilístico</h3>
+                        <p style="font-size: 1rem;">
+                            Para calcular de manera matemática el tamaño de la muestra representativa de microempresas en Bellavista a partir de una población total de <strong>N = 450</strong>, se aplica la fórmula para poblaciones finitas con un 95% de confianza (Z = 1.96) y un margen de error del 5% (E = 0.05):
+                        </p>
+                        <div class="formula-display">
+                            $$n = \frac{Z^2 \cdot N \cdot p \cdot q}{E^2 \cdot (N - 1) + Z^2 \cdot p \cdot q}$$
+                            <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-top: 0.5rem; border-top: 1px dashed var(--color-border); padding-top: 0.5rem;">
+                                Reemplazando los valores reales del proyecto:
+                                $$n = \frac{1.96^2 \cdot 450 \cdot 0.5 \cdot 0.5}{0.05^2 \cdot (450 - 1) + 1.96^2 \cdot 0.5 \cdot 0.5} \approx 207$$
+                            </div>
+                        </div>
+                        <div class="formula-legend">
+                            <strong>Valores del proyecto real:</strong>
+                            <ul>
+                                <li><strong>N</strong> = 450 (Población total registrada de microempresas minoristas)</li>
+                                <li><strong>Z</strong> = 1.96 (Nivel de confianza del 95%)</li>
+                                <li><strong>p, q</strong> = 0.5 (Varianza de proporción poblacional equilibrada 50/50)</li>
+                                <li><strong>E</strong> = 0.05 (Margen de error máximo del 5%)</li>
+                                <li><strong>n</strong> = 207 (Tamaño de muestra resultante calculado)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="background-color: var(--color-bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--color-border);">
+                        <h4 style="font-family: var(--font-title); color: var(--color-secondary); margin-bottom: 1rem;">Estadísticos de Tesis:</h4>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <strong>Rho de Spearman ($\rho$)</strong>
+                            <div class="formula-display" style="padding: 0.5rem;">
+                                $$\rho = 1 - \frac{6 \sum d^2}{n(n^2 - 1)}$$
+                            </div>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Mide el grado de correlación entre datos ordinales politómicos.</p>
+                        </div>
+                        
+                        <div>
+                            <strong>Alfa de Cronbach ($\alpha$)</strong>
+                            <div class="formula-display" style="padding: 0.5rem;">
+                                $$\alpha = \left( \frac{k}{k - 1} \right) \left( 1 - \frac{\sum S_i^2}{S_t^2} \right)$$
+                            </div>
+                            <p style="font-size: 0.85rem; margin-bottom: 0;">Mide la confiabilidad interna del cuestionario de 24 ítems ($\alpha \ge 0.80$ es óptimo).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SIMULADOR CUESTIONARIO COMPLETO -->
+        <section id="cuestionario" class="section-block fade-in-section">
+            <h2 class="section-title">El Instrumento: Cuestionario Completo</h2>
+            <div class="section-intro-box">
+                <h4>Simulador de Encuesta Real</h4>
+                <p>Este es el cuestionario real de 24 ítems politómicos bajo escala Likert. Navega por las dimensiones e interactúa marcando las opciones para ver exactamente cómo registraríamos la información fáctica de campo en Bellavista.</p>
+            </div>
+
+            <div class="survey-container">
+                <div class="survey-info">
+                    <strong>Escala de Valoración Likert Fáctica Aplicada:</strong>
+                    <div class="survey-scale-legend">
+                        <div class="scale-item sc-1">1: Nunca / Nulo</div>
+                        <div class="scale-item sc-2">2: Raras veces / Básico</div>
+                        <div class="scale-item sc-3">3: Ocasionalmente / Medio</div>
+                        <div class="scale-item sc-4">4: Frecuentemente / Alto</div>
+                        <div class="scale-item sc-5">5: Siempre / Óptimo</div>
+                    </div>
+                </div>
+
+                <div class="survey-nav-tabs">
+                    <button class="survey-tab-btn active" onclick="switchSurveyTab('v1-d1')">V1 D1: Medios Pago</button>
+                    <button class="survey-tab-btn" onclick="switchSurveyTab('v1-d2')">V1 D2: Canales Venta</button>
+                    <button class="survey-tab-btn" onclick="switchSurveyTab('v1-d3')">V1 D3: Geolocalización</button>
+                    <button class="survey-tab-btn" onclick="switchSurveyTab('v2-d1')">V2 D1: Ingresos</button>
+                    <button class="survey-tab-btn" onclick="switchSurveyTab('v2-d2')">V2 D2: Eficiencia</button>
+                </div>
+
+                <!-- BLOQUE V1 D1 -->
+                <div class="survey-block active" id="tab-v1-d1">
+                    <div class="survey-dimension-header">V1 - Dimensión 1: Medios de Pago Electrónicos (Ítems 1-4)</div>
+                    
+                    <div class="survey-question">
+                        <div class="question-text">1. El establecimiento procesa transacciones corrientes de cobro de manera diaria a través de billeteras digitales móviles (Yape o Plin).</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q1" value="1"> Nunca (&lt;5 al día)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q1" value="2"> Raras veces (5-10 al día)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q1" value="3"> Ocasionalmente (11-20)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q1" value="4"> Frecuentemente (21-30)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q1" value="5"> Siempre (&gt;30 al día)</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">2. El negocio dispone y utiliza activamente terminales de punto de venta físicos o móviles (mPOS como Izipay, Niubiz, Vendemás) para aceptar pagos con tarjetas de débito y crédito.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q2" value="1"> Nunca / No cuenta</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q2" value="2"> Raras veces (&lt;10% venta)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q2" value="3"> Ocasionalmente (11-25%)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q2" value="4"> Frecuentemente (26-50%)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q2" value="5"> Siempre (&gt;50% venta)</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">3. El establecimiento cuenta con códigos QR oficiales impresos, plastificados y distribuidos visiblemente en la zona de caja para facilitar la autogestión del cobro por el cliente.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q3" value="1"> No cuenta con material</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q3" value="2"> QR guardado en cajón</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q3" value="3"> Un QR poco visible</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q3" value="4"> QR visible mostrador</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q3" value="5"> QR múltiples en tienda</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">4. El negocio realiza o acepta transferencias bancarias directas de abono inmediato (vía aplicativos de banca móvil como BCP, BBVA, Interbank, Scotiabank) para liquidar compras corrientes.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q4" value="1"> Nunca acepta</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q4" value="2"> Raras veces (conocidos)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q4" value="3"> Ocasionalmente (caídas)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q4" value="4"> Frecuentemente (mediano valor)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q4" value="5"> Siempre (verificación diaria)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOQUE V1 D2 -->
+                <div class="survey-block" id="tab-v1-d2">
+                    <div class="survey-dimension-header">V1 - Dimensión 2: Canales de Venta y Atención Digital (Ítems 5-8)</div>
+                    
+                    <div class="survey-question">
+                        <div class="question-text">5. El establecimiento utiliza la aplicación WhatsApp (Personal o Business) de forma operativa para recibir pedidos de productos, enviar listas de precios y coordinar entregas.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q5" value="1"> Nunca utiliza</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q5" value="2"> Raras veces (dudas aisladas)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q5" value="3"> Ocasionalmente (intermitente)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q5" value="4"> Frecuentemente (pedidos diarios)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q5" value="5"> Siempre (canal principal)</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">6. El negocio cuenta con herramientas digitales estructuradas (catálogos virtuales, menús interactivos o portafolios digitales de productos) accesibles para sus consumidores.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q6" value="1"> Sin ningún catálogo</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q6" value="2"> Envía fotos sueltas</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q6" value="3"> Lista fija en PDF/imagen</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q6" value="4"> Catálogo en WhatsApp Business</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q6" value="5"> Catálogo dinámico con sistema</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">7. El negocio posee y gestiona una página web propia (sitio informativo o tienda virtual) o un perfil comercial corporativo en redes sociales (Facebook/Instagram) para exhibir su stock.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q7" value="1"> Sin página ni perfiles</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q7" value="2"> Perfil comercial inactivo</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q7" value="3"> Perfil activo esporádico</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q7" value="4"> Página web vitrina/informativa</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q7" value="5"> Web transaccional e-commerce</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">8. La microempresa invierte recursos en publicidad digital pagada (Facebook Ads, Instagram Ads o promociones pagadas en redes) para atraer clientes de zonas aledañas en el distrito de Bellavista.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q8" value="1"> Nunca ha invertido</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q8" value="2"> Inversión mínima una vez</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q8" value="3"> Inversión esporádica festivos</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q8" value="4"> Presupuesto mensual pequeño</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q8" value="5"> Campañas segmentadas fijas</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOQUE V1 D3 -->
+                <div class="survey-block" id="tab-v1-d3">
+                    <div class="survey-dimension-header">V1 - Dimensión 3: Visibilidad y Geolocalización Local (Ítems 9-12)</div>
+                    
+                    <div class="survey-question">
+                        <div class="question-text">9. El establecimiento comercial se encuentra registrado con su ubicación geográfica exacta, nombre oficial y categoría en la plataforma Google Maps o Waze.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q9" value="1"> No aparece en mapas</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q9" value="2"> Registro automático con errores</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q9" value="3"> Registro desactualizado</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q9" value="4"> Ubicación exacta verificada</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q9" value="5"> Google Maps optimizado diario</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">10. El negocio publica ofertas, promociones o anuncios de sus productos en comunidades, grupos vecinales o páginas de Facebook de su zona de influencia en Bellavista.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q10" value="1"> Nunca participa</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q10" value="2"> Raras veces (ventas bajas)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q10" value="3"> Esporádico (liquidar saldos)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q10" value="4"> Publica semanal activo</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q10" value="5"> Monitoreo vecinal diario</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">11. El establecimiento utiliza sistemas de mensajería masiva local (grupos de difusión de vecinos de la cuadra o comunidades de WhatsApp de la urbanización) para fidelizar y comunicar el stock diario.</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q11" value="1"> No posee listas/grupos</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q11" value="2"> Pertenece pasivo sin venta</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q11" value="3"> Envía ofertas manual esporádicas</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q11" value="4"> Grupo de WhatsApp propio</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q11" value="5"> Comunidades activas diarias</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">12. El negocio aprovecha las herramientas de optimización de búsqueda local (SEO Local) o etiquetas de ubicación digital para aparecer en las búsquedas móviles cuando un usuario busca palabras clave (ej. "bodega cerca", "minimarket abierto").</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q12" value="1"> Desconoce SEO Local</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q12" value="2"> Nombre de negocio simple</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q12" value="3"> Etiquetas básicas en historias</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q12" value="4"> Palabras clave en descripción</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q12" value="5"> Estrategia local optimizada</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOQUE V2 D1 -->
+                <div class="survey-block" id="tab-v2-d1">
+                    <div class="survey-dimension-header">V2 - Dimensión 1: Flujo de Ingresos Monetarios (Ítems 13-18)</div>
+                    
+                    <div class="survey-question">
+                        <div class="question-text">13. De los ingresos monetarios semanales totales que recauda su comercio, ¿qué proporción aproximada de dinero ingresa directamente por canales digitales (billeteras/tarjetas)?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q13" value="1"> Muy bajo (&lt;25% recaudo)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q13" value="2"> Bajo (25% - 40%)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q13" value="3"> Medio (41% - 50%)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q13" value="4"> Alto (51% - 75%)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q13" value="5"> Excelente (&gt;75% recaudo)</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">14. ¿En qué rango se sitúa el ticket promedio de compra por cada transacción individual de cliente que se procesa a través de los sistemas digitales instalados en su negocio?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q14" value="1"> Rango muy bajo (&lt; S/ 5)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q14" value="2"> Rango bajo (S/ 5 - 10)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q14" value="3"> Rango medio (S/ 11 - 20)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q14" value="4"> Rango alto (S/ 21 - 30)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q14" value="5"> Excelente (&gt; S/ 30)</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">15. Al comparar la velocidad de acumulación de los ingresos diarios corrientes actuales frente a la época en que su negocio operaba de forma tradicional o analógica, ¿qué comportamiento registra?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q15" value="1"> Deficiente: Ha disminuido</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q15" value="2"> Estático: Igual que antes</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q15" value="3"> Moderado: Ligeramente superior</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q15" value="4"> Dinámico: Notable incremento</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q15" value="5"> Excelente: Recaudación acelerada</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">16. Respecto a las restricciones en la recaudación diaria, ¿cómo maneja su negocio la aceptación de flujos digitales corrientes sin condicionar la compra?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q16" value="1"> Limitado alto (mínimo &gt;S/10)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q16" value="2"> Limitado bajo (mínimo &gt;S/5)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q16" value="3"> Neutro (mínimo libre, tope bajo)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q16" value="4"> Flexible (monto libre, limita noche)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q16" value="5"> Totalmente flexible sin límites</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">17. ¿Con qué frecuencia observa que los clientes vuelven a comprar a su negocio motivados por las facilidades de pago y atención digital que usted ofrece en su local?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q17" value="1"> Nunca vuelven por eso</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q17" value="2"> Raras veces (recompra aislada)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q17" value="3"> Ocasionalmente (barrio prefiere)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q17" value="4"> Frecuentemente (fidelización)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q17" value="5"> Siempre (factor de retención)</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">18. Al realizar promociones, ofertas especiales o liquidación de stock a través de canales digitales, ¿qué nivel de impacto registra en el volumen total de ingresos semanales?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q18" value="1"> Nulo: No realiza / No percibe</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q18" value="2"> Bajo incremento semanal</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q18" value="3"> Incremento aceptable temporal</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q18" value="4"> Alto: Dinamización notable</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q18" value="5"> Excelente: Facturación exponencial</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLOQUE V2 D2 -->
+                <div class="survey-block" id="tab-v2-d2">
+                    <div class="survey-dimension-header">V2 - Dimensión 2: Eficiencia Operativa del Servicio (Ítems 19-24)</div>
+                    
+                    <div class="survey-question">
+                        <div class="question-text">19. Pensando en las ventas frustradas, ¿con qué frecuencia su microempresa ha evitado perder clientes y ventas gracias a que los cobros digitales anulan la necesidad de dar vuelto en efectivo (sencillo)?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q19" value="1"> Nunca (sigue perdiendo por vuelto)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q19" value="2"> Raras veces (mínimo rescate)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q19" value="3"> Ocasionalmente evita pérdidas</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q19" value="4"> Frecuentemente rescata en caja</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q19" value="5"> Siempre (anula vuelto perdido)</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">20. En promedio, ¿cuánto tiempo toma concretar el cierre de una venta y procesar el cobro de un cliente cuando se utilizan los sistemas digitales en comparación con el efectivo tradicional?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q20" value="1"> Deficiente: Muy lento (&gt;3 min)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q20" value="2"> Proceso lento (2-3 min)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q20" value="3"> Regular (igual que contar sencillo)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q20" value="4"> Proceso ágil (&lt;1 min)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q20" value="5"> Proceso instantáneo excelente</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">21. ¿Qué nivel de facilidad o simplificación práctica experimenta al realizar el balance y cuadre de caja diario al final de la jornada de su microempresa?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q21" value="1"> Dificultad muy alta (caos)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q21" value="2"> Dificultad moderada (descuadres)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q21" value="3"> Balance regular manual de siempre</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q21" value="4"> Facilidad alta: Historial digital</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q21" value="5"> Arqueo automático en minutos</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">22. ¿En qué medida la adopción de estos sistemas digitales ha reducido la cantidad de dinero en efectivo acumulado físicamente en la caja del local, disminuyendo los riesgos de robos en el distrito?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q22" value="1"> Sin reducción de efectivo expuesto</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q22" value="2"> Reducción baja en mostrador</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q22" value="3"> Reducción moderada parcial</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q22" value="4"> Reducción alta: Resguarda caja</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q22" value="5"> Reducción excelente bancarizada</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">23. ¿En qué medida el uso de canales y pagos digitales ha reducido el tiempo que el microempresario o su personal debe dedicar a trasladarse físicamente para depositar dinero en agencias bancarias o cajeros?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q23" value="1"> Sin reducción de viajes de depósito</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q23" value="2"> Reducción baja (1 viaje mensual)</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q23" value="3"> Reducción moderada parcial</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q23" value="4"> Reducción alta de viajes</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q23" value="5"> Reducción excelente (flujo directo)</label>
+                        </div>
+                    </div>
+
+                    <div class="survey-question">
+                        <div class="question-text">24. ¿En qué medida la adopción de sistemas digitales ha disminuido la comisión de errores humanos (como vuelto errado, cuadres incorrectos o aceptación de billetes falsos) en la cobranza de su negocio?</div>
+                        <div class="question-options">
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q24" value="1"> Nulo: Errores constantes</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q24" value="2"> Bajo: Leve reducción en caja</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q24" value="3"> Moderado: Reducción parcial</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q24" value="4"> Alto: Reducción significativa</label>
+                            <label class="option-label" onclick="selectRadio(this)"><input type="radio" name="q24" value="5"> Excelente: Cobranza exacta y cero errores</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ANTECEDENTES ACADÉMICOS -->
+        <section id="antecedentes" class="section-block fade-in-section">
+            <h2 class="section-title">Antecedentes de la Investigación</h2>
+            <div class="section-intro-box">
+                <h4>Soporte Teórico</h4>
+                <p>Las tesis previas nacionales e internacionales que validan nuestro marco de estudio. Navega por las pestañas de cada card para ver el Resumen, el Método, el Hallazgo Principal y su Relevancia para el proyecto actual.</p>
+            </div>
+
+            <div class="antecedents-grid">
+                
+                <!-- Antecedente 1: Nacional -->
+                <div class="antecedent-card">
+                    <div class="ant-header">
+                        <span class="ant-badge">Nacional (UNAC)</span>
+                        <h3 class="ant-title">Alva & Montenegro (2022)</h3>
+                        <div class="ant-authors">"Inclusión financiera y competitividad de los comerciantes minoristas en la provincia constitucional del Callao"</div>
+                    </div>
+                    <div class="ant-tabs-nav">
+                        <button class="ant-tab-btn active" onclick="switchAntTab(this, 'ant1-res')">Resumen</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant1-met')">Método</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant1-hall')">Hallazgo</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant1-rel')">Relevancia</button>
+                    </div>
+                    <div class="ant-tab-pane active" id="ant1-res">
+                        Analiza la penetración de medios bancarios de cobro y ahorro sobre las ventas y competitividad de las MYPES chalacas, evidenciando brechas operativas locales.
+                    </div>
+                    <div class="ant-tab-pane" id="ant1-met">
+                        <strong>Metodología:</strong> Enfoque cuantitativo, diseño no experimental transeccional descriptivo-correlacional, muestra de 120 comerciantes.
+                    </div>
+                    <div class="ant-tab-pane" id="ant1-hall">
+                        <strong>Hallazgo:</strong> El 68% de los microempresarios reporta incrementos competitivos tras la inserción en el sistema financiero regulado y adopción de terminales electrónicos.
+                    </div>
+                    <div class="ant-tab-pane" id="ant1-rel">
+                        <strong>Relevancia:</strong> Aporta base empírica e indicadores sobre las brechas de inclusión bancaria en el ecosistema regional del Callao.
+                    </div>
+                </div>
+
+                <!-- Antecedente 2: Nacional -->
+                <div class="antecedent-card">
+                    <div class="ant-header">
+                        <span class="ant-badge">Nacional (UNAC)</span>
+                        <h3 class="ant-title">Ramírez & Espinoza (2024)</h3>
+                        <div class="ant-authors">"Evaluación del impacto transaccional de las plataformas Yape y Plin en la liquidez diaria del Callao"</div>
+                    </div>
+                    <div class="ant-tabs-nav">
+                        <button class="ant-tab-btn active" onclick="switchAntTab(this, 'ant2-res')">Resumen</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant2-met')">Método</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant2-hall')">Hallazgo</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant2-rel')">Relevancia</button>
+                    </div>
+                    <div class="ant-tab-pane active" id="ant2-res">
+                        Evalúa cómo los aplicativos móviles de cobro de cuenta a cuenta (Yape/Plin) influyen de manera transaccional directa en el recaudo diario corriente y la caja chica.
+                    </div>
+                    <div class="ant-tab-pane" id="ant2-met">
+                        <strong>Metodología:</strong> Cuantitativo aplicado, muestra piloto probabilística de 95 locales comerciales del Callao.
+                    </div>
+                    <div class="ant-tab-pane" id="ant2-hall">
+                        <strong>Hallazgo:</strong> Demuestra que el uso de billeteras digitales agiliza en un 35% la rotación de caja diaria al disminuir los tiempos muertos de traslado bancario.
+                    </div>
+                    <div class="ant-tab-pane" id="ant2-rel">
+                        <strong>Relevancia:</strong> Aporta los ítems fácticos específicos y la justificación del uso de billeteras móviles para la Dimensión 1 del proyecto.
+                    </div>
+                </div>
+
+                <!-- Antecedente 3: Internacional -->
+                <div class="antecedent-card">
+                    <div class="ant-header">
+                        <span class="ant-badge">Internacional (Bogotá)</span>
+                        <h3 class="ant-title">Gómez & Cardona (2023)</h3>
+                        <div class="ant-authors">"Efectos operacionales de la adopción de medios de pago móviles en el comercio minorista de Bogotá"</div>
+                    </div>
+                    <div class="ant-tabs-nav">
+                        <button class="ant-tab-btn active" onclick="switchAntTab(this, 'ant3-res')">Resumen</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant3-met')">Método</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant3-hall')">Hallazgo</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant3-rel')">Relevancia</button>
+                    </div>
+                    <div class="ant-tab-pane active" id="ant3-res">
+                        Analiza los efectos de la digitalización transaccional sobre la agilidad de atención y la captación de clientes en establecimientos tradicionales de escala micro.
+                    </div>
+                    <div class="ant-tab-pane" id="ant3-met">
+                        <strong>Metodología:</strong> Correlacional causal, recolección mediante encuesta estructurada a 310 micro-negocios del sector comercial.
+                    </div>
+                    <div class="ant-tab-pane" id="ant3-hall">
+                        <strong>Hallazgo:</strong> Se constató que las ventas no presenciales coordinadas y cobradas digitalmente redujeron la tasa de transacciones frustradas en un 42%.
+                    </div>
+                    <div class="ant-tab-pane" id="ant3-rel">
+                        <strong>Relevancia:</strong> Proporciona un precedente conceptual de cómo evaluar el "ticket promedio" y el "recaudo digital" en estudios de gestión.
+                    </div>
+                </div>
+
+                <!-- Antecedente 4: Internacional -->
+                <div class="antecedent-card">
+                    <div class="ant-header">
+                        <span class="ant-badge">Internacional (Guadalajara)</span>
+                        <h3 class="ant-title">Vargas & Santos (2024)</h3>
+                        <div class="ant-authors">"Estructura transaccional y desempeño operativo en micro-negocios en Guadalajara, México"</div>
+                    </div>
+                    <div class="ant-tabs-nav">
+                        <button class="ant-tab-btn active" onclick="switchAntTab(this, 'ant4-res')">Resumen</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant4-met')">Método</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant4-hall')">Hallazgo</button>
+                        <button class="ant-tab-btn" onclick="switchAntTab(this, 'ant4-rel')">Relevancia</button>
+                    </div>
+                    <div class="ant-tab-pane active" id="ant4-res">
+                        Investiga el impacto conjunto de la presencia de búsqueda local móvil (SEO local/maps) y la aceptación de terminales de cobro sobre la rentabilidad diaria.
+                    </div>
+                    <div class="ant-tab-pane" id="ant4-met">
+                        <strong>Metodología:</strong> Diseño cuantitativo correlacional-explicativo con modelamiento de ecuaciones estructurales.
+                    </div>
+                    <div class="ant-tab-pane" id="ant4-hall">
+                        <strong>Hallazgo:</strong> La infraestructura de cobro y la presencia en mapas digitales explican el 45% de la variabilidad del desempeño comercial diario.
+                    </div>
+                    <div class="ant-tab-pane" id="ant4-rel">
+                        <strong>Relevancia:</strong> Justifica la inclusión de la geolocalización (Dimensión 3 de V1) como un catalizador clave del desempeño comercial.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- MODAL DE DETALLES -->
+    <div class="custom-modal" id="modal-container">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-title" id="modal-title-text">Título del Elemento</div>
+            <div class="modal-body" id="modal-body-text">Descripción detallada del elemento metodológico.</div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-logo">Tesis<span>Interactive</span></div>
+        <p class="footer-info">
+            Este recurso educativo interactivo fue desarrollado para simplificar el aprendizaje y la comprensión metodológica del proyecto de tesis del Grupo 5 de la Facultad de Ciencias Administrativas.
+        </p>
+        <div class="footer-group">
+            <strong>INTEGRANTES DEL GRUPO 5:</strong>
+            <ul>
+                <li>Quiñones Medina Misael Erik</li>
+                <li>Padilla Piña Katherin Grethel</li>
+                <li>Frías Pintado Carlos Alberto</li>
+                <li>Urquiza Zapata Josee Antonio</li>
+                <li>Diaz Centeno Glendy</li>
+                <li>Leon Flores Karina</li>
+            </ul>
+        </div>
+        <div class="footer-copy">
+            Universidad Nacional del Callao • Escuela Profesional de Administración • 2026. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Archivo de Lógica de Interacciones Externo -->
+    <script src="script.js"></script>
+</body>
+</html>
