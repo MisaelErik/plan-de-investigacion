@@ -13,14 +13,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+let mapZoomLevel = 1.0;
+
 function drawConnections() {
     const canvas = document.getElementById('canvas-overlay');
-    const wrapper = document.querySelector('.map-wrapper');
-    if (!canvas || !wrapper) return;
+    const outerWrapper = document.querySelector('.map-wrapper');
+    const zoomArea = document.getElementById('map-zoom-area');
+    if (!canvas || !outerWrapper || !zoomArea) return;
 
-    // Ajustar el tamaño del SVG al tamaño completo del scroll del contenedor
-    canvas.setAttribute('width', wrapper.scrollWidth);
-    canvas.setAttribute('height', wrapper.scrollHeight);
+    // El tamaño del canvas debe ser el tamaño completo del contenedor sin escalar
+    canvas.setAttribute('width', zoomArea.scrollWidth);
+    canvas.setAttribute('height', zoomArea.scrollHeight);
 
     // Limpiar canvas
     canvas.innerHTML = '';
@@ -69,7 +72,7 @@ function drawConnections() {
         { parent: 'node-oe3', child: 'node-he3', type: 'general' }
     ];
 
-    const rectWrapper = wrapper.getBoundingClientRect();
+    const rectWrapper = zoomArea.getBoundingClientRect();
 
     connections.forEach(conn => {
         const parentEl = document.getElementById(conn.parent);
@@ -87,22 +90,22 @@ function drawConnections() {
             if (isHorizontal) {
                 // De borde derecho de padre a borde izquierdo de hijo (o viceversa si hijo está a la izquierda)
                 if (rectParent.left < rectChild.left) {
-                    x1 = rectParent.right - rectWrapper.left + wrapper.scrollLeft;
-                    y1 = rectParent.top - rectWrapper.top + wrapper.scrollTop + rectParent.height / 2;
-                    x2 = rectChild.left - rectWrapper.left + wrapper.scrollLeft;
-                    y2 = rectChild.top - rectWrapper.top + wrapper.scrollTop + rectChild.height / 2;
+                    x1 = (rectParent.right - rectWrapper.left) / mapZoomLevel;
+                    y1 = (rectParent.top - rectWrapper.top + rectParent.height / 2) / mapZoomLevel;
+                    x2 = (rectChild.left - rectWrapper.left) / mapZoomLevel;
+                    y2 = (rectChild.top - rectWrapper.top + rectChild.height / 2) / mapZoomLevel;
                 } else {
-                    x1 = rectParent.left - rectWrapper.left + wrapper.scrollLeft;
-                    y1 = rectParent.top - rectWrapper.top + wrapper.scrollTop + rectParent.height / 2;
-                    x2 = rectChild.right - rectWrapper.left + wrapper.scrollLeft;
-                    y2 = rectChild.top - rectWrapper.top + wrapper.scrollTop + rectChild.height / 2;
+                    x1 = (rectParent.left - rectWrapper.left) / mapZoomLevel;
+                    y1 = (rectParent.top - rectWrapper.top + rectParent.height / 2) / mapZoomLevel;
+                    x2 = (rectChild.right - rectWrapper.left) / mapZoomLevel;
+                    y2 = (rectChild.top - rectWrapper.top + rectChild.height / 2) / mapZoomLevel;
                 }
             } else {
                 // Por defecto, de abajo de padre a arriba de hijo
-                x1 = rectParent.left - rectWrapper.left + wrapper.scrollLeft + rectParent.width / 2;
-                y1 = rectParent.bottom - rectWrapper.top + wrapper.scrollTop;
-                x2 = rectChild.left - rectWrapper.left + wrapper.scrollLeft + rectChild.width / 2;
-                y2 = rectChild.top - rectWrapper.top + wrapper.scrollTop;
+                x1 = (rectParent.left - rectWrapper.left + rectParent.width / 2) / mapZoomLevel;
+                y1 = (rectParent.bottom - rectWrapper.top) / mapZoomLevel;
+                x2 = (rectChild.left - rectWrapper.left + rectChild.width / 2) / mapZoomLevel;
+                y2 = (rectChild.top - rectWrapper.top) / mapZoomLevel;
             }
 
             const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -651,5 +654,33 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => selectFunnelLevel('macro'), 200);
     }
 });
+
+/* --- CONTROLES DE ZOOM DEL MAPA --- */
+function changeMapZoom(amount) {
+    mapZoomLevel = Math.max(0.3, Math.min(1.5, mapZoomLevel + amount));
+    const zoomArea = document.getElementById('map-zoom-area');
+    const indicator = document.getElementById('zoom-value');
+    if (zoomArea) {
+        zoomArea.style.transform = `scale(${mapZoomLevel})`;
+        if (indicator) {
+            indicator.innerText = `${Math.round(mapZoomLevel * 100)}%`;
+        }
+        // Volver a dibujar conexiones
+        setTimeout(drawConnections, 100);
+    }
+}
+
+function resetMapZoom() {
+    mapZoomLevel = 1.0;
+    const zoomArea = document.getElementById('map-zoom-area');
+    const indicator = document.getElementById('zoom-value');
+    if (zoomArea) {
+        zoomArea.style.transform = `scale(${mapZoomLevel})`;
+        if (indicator) {
+            indicator.innerText = '100%';
+        }
+        setTimeout(drawConnections, 100);
+    }
+}
 
 

@@ -91,11 +91,24 @@
                 <p>Al pasar el mouse (hover) sobre **cualquier caja o nodo** (problemas, objetivos, hipótesis, variables o dimensiones), se encenderá **únicamente el camino de elementos que lo componen**. Por ejemplo, si pasas sobre el <strong>Problema General (PG)</strong> se encenderán solo las dos Variables. Si pasas sobre un <strong>Problema Específico (PE)</strong>, se encenderá la dimensión que lo compone, su variable y el objetivo/hipótesis correspondientes. Haz click en cualquier nodo para ver su definición.</p>
             </div>
 
+            <div class="map-scroll-hint">
+                <span>↔ Desliza horizontalmente para explorar el mapa estructural de la tesis</span>
+            </div>
+
             <div class="map-wrapper">
-                <!-- SVG Canvas para conexiones dinámicas -->
-                <svg class="map-connections-canvas" id="canvas-overlay"></svg>
+                <!-- Controles de Zoom Flotantes -->
+                <div class="map-zoom-controls">
+                    <button class="zoom-btn" onclick="changeMapZoom(-0.1)" title="Alejar (Zoom Out)">➖</button>
+                    <span class="zoom-indicator" id="zoom-value">100%</span>
+                    <button class="zoom-btn" onclick="changeMapZoom(0.1)" title="Acercar (Zoom In)">➕</button>
+                    <button class="zoom-btn reset-btn" onclick="resetMapZoom()" title="Restablecer">🔄 Restablecer</button>
+                </div>
                 
-                <div class="pyramid-container">
+                <div class="map-zoom-area" id="map-zoom-area">
+                    <!-- SVG Canvas para conexiones dinámicas -->
+                    <svg class="map-connections-canvas" id="canvas-overlay"></svg>
+                    
+                    <div class="pyramid-container">
                     
                     <!-- NIVEL 1: TEMA (Cúspide de la Pirámide) -->
                     <div class="pyramid-row pyramid-level-1">
@@ -265,6 +278,7 @@
                         </div>
                     </div>
 
+                </div>
                 </div>
             </div>
         </section>
